@@ -153,14 +153,20 @@ int Array<X>::end()
 {
     return capacity;
 }
-int main()
-{
+
+void intData(){
     Array<int> arr;
     arr.createArray(5);
-    if (arr.isEmpty())
+    if (arr.isEmpty()){
         std::cout << "Array is Empty" << std::endl;
-    else
+    }
+    else{
         std::cout << "Array has some data" << std::endl;
+        for(int i=0;i<arr.getSize();i++){
+            std::cout<<arr[i]<<std::endl;
+        }
+        std::cout<<std::endl;
+    }
 
     for (int i = 0; i < arr.getSize(); i++)
     {
@@ -203,6 +209,34 @@ int main()
     {
         std::cout << arr[i] << " ";
     }
+    
+}
+int main()
+{   
+    Array<std::string>strarr;
+    strarr.createArray(3);
+    if(strarr.isEmpty()){
+        std::cout<<"Array is Empty"<<std::endl;
+    }else{
+        std::cout<<"Array has some data"<<std::endl;
+        for(int i=0;i<strarr.getSize();i++){
+            std::cout<<strarr[i]<<" ";
+        }
+        std::cout<<std::endl;
+    }
+
+    for(int i=0;i<strarr.getSize();i++){
+        std::string data;
+        std::cin>>data;
+        strarr.append(data);
+    }
+
+    for(int i=0;i<strarr.getSize();i++){
+        std::cout<<strarr[i]<<std::endl;
+    }
+    std::cout<<std::endl;
+
+    //intData();
     
 
 }
